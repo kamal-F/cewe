@@ -16,6 +16,7 @@ public class Cewe extends Actor
     public void act() 
     {
         // Add your action code here.
+        /*
         if(Greenfoot.isKeyDown("up")){
             setLocation(getX(),getY()-1);
         }
@@ -27,6 +28,13 @@ public class Cewe extends Actor
         }
         if(Greenfoot.isKeyDown("left")){
             setLocation(getX()-1,getY());
+        }*/
+       if(Greenfoot.mouseDragged(this)){ 
+           MouseInfo m = Greenfoot.getMouseInfo();
+           int posX = m.getX();
+           int posY = m.getY();
+           
+           setLocation(posX, posY);
         }
     }
         

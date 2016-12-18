@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
+import java.util.ArrayList;
 /**
  * Write a description of class MusuhRaja here.
  * 
@@ -14,7 +15,7 @@ public class MusuhRaja extends Musuh
     
     public MusuhRaja(int jenis){
         super(jenis);
-        setNyawa(60);
+        setNyawa(200);
         setImage("alligator.png");
     }
     
@@ -28,7 +29,9 @@ public class MusuhRaja extends Musuh
         gerakAcak();
         tembak(300);
         gerakAcakPutar();
+        hindar();
         cekKena();
+        
     }
     
     public void gerakAcak()
@@ -50,5 +53,18 @@ public class MusuhRaja extends Musuh
         if(isAtEdge()){
           turn(50) ;
         };
+    }
+    
+    public void hindar(){        
+        if(!getObjectsInRange(100, Cewe.class).isEmpty()){
+            Actor cw = this.getObjectsInRange(200, Cewe.class).get(0);
+            //getWorld().showText("dddd"+cw.getX(), 400, 300);
+            setLocation(cw.getX()- ((Greenfoot.getRandomNumber(3)+1)*100),cw.getY()-(Greenfoot.getRandomNumber(3)+1)*100);
+            
+        }else{
+            getWorld().showText("    ", 400, 300);
+        }
+               
+        return;
     }
 }
