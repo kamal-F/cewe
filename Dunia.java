@@ -15,6 +15,9 @@ public class Dunia extends World
     private boolean isBerhenti = false;
     
     private int waktu = 0;
+    
+    private Label labelWaktu = new Label("waktu", 20);
+    private Label labelNyawa = new Label("Nyawa", 20);
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -32,7 +35,9 @@ public class Dunia extends World
      */
     private void prepare()
     {
-        addObject(counter,89,50);        
+        addObject(counter,89,50); 
+        addObject(labelWaktu, 90,100);        
+        addObject(labelNyawa,90,150);
     }
     
     public Counter getCounter(){
@@ -81,6 +86,13 @@ public class Dunia extends World
     }
     
     public void showWaktu(){
-        showText("waktu="+ waktu, 100, 100);
+        labelWaktu.setValue("waktu="+ waktu);        
+    }
+       
+    public void setLabelWaktu(String isi){
+        labelWaktu.setValue(isi);
+    }
+    public void setLabelNyawa(String isi){
+        labelNyawa.setValue(isi);
     }
 }

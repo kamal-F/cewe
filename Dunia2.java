@@ -60,7 +60,8 @@ public class Dunia2 extends Dunia
            berhenti();
        }
        
-       showText("nyawa="+cewe.getNyawa(), 100, 200) ;
+       //showText("nyawa="+cewe.getNyawa(), 100, 200) ;
+       setLabelNyawa("nyawa="+cewe.getNyawa());
        showWaktu();
     }
 }
